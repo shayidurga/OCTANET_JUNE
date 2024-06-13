@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>To-Do List App</h1>
+        <div class="task-input">
+            <input type="text" id="taskName" placeholder="Task name...">
+            <input type="date" id="dueDate">
+            <select id="priority">
+                <option value="low">Low Priority</option>
+                <option value="medium">Medium Priority</option>
+                <option value="high">High Priority</option>
+            </select>
+            <select id="category">
+                <option value="work">Work</option>
+                <option value="personal">Personal</option>
+                <option value="other">Other</option>
+            </select>
+            <button onclick="addTask()">Add Task</button>
+        </div>
+        <div class="filters">
+            <h3>Filters:</h3>
+            <select id="filterPriority" onchange="updateTaskList()">
+                <option value="all">All Priorities</option>
+                <option value="low">Low Priority</option>
+                <option value="medium">Medium Priority</option>
+                <option value="high">High Priority</option>
+            </select>
+            <select id="filterCategory" onchange="updateTaskList()">
+                <option value="all">All Categories</option>
+                <option value="work">Work</option>
+                <option value="personal">Personal</option>
+                <option value="other">Other</option>
+            </select>
+            <select id="filterCompletion" onchange="updateTaskList()">
+                <option value="all">All Tasks</option>
+                <option value="completed">Completed</option>
+                <option value="incomplete">Incomplete</option>
+            </select>
+            <input type="date" id="filterDate" onchange="updateTaskList()">
+        </div>
+        <div id="taskList"></div>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+</html>
